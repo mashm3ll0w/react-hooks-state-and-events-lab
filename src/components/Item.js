@@ -9,12 +9,13 @@ function Item({ name, category }) {
   }
 
   const itemClass = addItem ? "in-cart" : ""
+  const buttonClass = addItem ? "remove" : "add"
 
   return (
     <li className={itemClass}>
       <span>{name}</span>
       <span className="category">{category}</span>
-      <button className="add" onClick={handleCartClick}>{addItem ? "Remove From Cart" : "Add to Cart"}</button>
+      <button className={buttonClass} onClick={handleCartClick}>{addItem ? "Remove From Cart" : "Add to Cart"}</button>
     </li>
   );
 }
